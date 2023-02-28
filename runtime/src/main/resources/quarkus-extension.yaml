@@ -1,0 +1,4 @@
+name: Example extension
+artifact: ${project.groupId}:${project.artifactId}:${project.version}
+metadata:
+  short-name: "example-extension"

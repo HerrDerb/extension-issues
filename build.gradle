@@ -1,5 +1,6 @@
 allprojects {
     apply plugin: 'maven-publish'
+    apply plugin: 'java-library'
     group = 'com.example'
     version = "$version"
 
@@ -7,28 +8,17 @@ allprojects {
     pluginManager.withPlugin("java-library") {
         apply plugin: 'jacoco'
         dependencies {
-            implementation platform('io.quarkus.platform:quarkus-bom:2.15.3.Final')
+            implementation platform('io.quarkus.platform:quarkus-bom:2.16.3.Final')
 
             compileOnly "org.projectlombok:lombok:1.18.24"
             annotationProcessor "org.projectlombok:lombok:1.18.22"
             testCompileOnly "org.projectlombok:lombok:1.18.22"
             testAnnotationProcessor "org.projectlombok:lombok:1.18.22"
-
-            testImplementation 'org.mockito:mockito-core:5.0.0'
-            testImplementation 'org.assertj:assertj-core:3.24.2'
-            testImplementation 'org.junit.jupiter:junit-jupiter-api'
-            testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine'
         }
 
         test {
             systemProperty "java.util.logging.manager", "org.jboss.logmanager.LogManager"
             useJUnitPlatform()
-        }
-
-        jacocoTestReport {
-            reports {
-                html.required = true
-            }
         }
 
         java {

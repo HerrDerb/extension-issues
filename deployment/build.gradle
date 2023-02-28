@@ -10,5 +10,14 @@ dependencies {
 
     testImplementation 'io.quarkus:quarkus-junit5'
     testImplementation 'io.quarkus:quarkus-junit5-internal'
+    testImplementation("io.quarkus:quarkus-jacoco")
+}
 
+publishing {
+    publications {
+        maven(MavenPublication) {
+            from(components.java)
+            artifactId = "example-extension-config-deployment"
+        }
+    }
 }
