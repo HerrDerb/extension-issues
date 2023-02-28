@@ -1,17 +1,33 @@
 pluginManagement {
     repositories {
-        mavenCentral()
+        mavenLocal()
         gradlePluginPortal()
     }
     plugins {
-        id 'io.quarkus.extension' version '2.15.3.Final'
+        id 'io.quarkus.extension' version '3.6.0'
     }
 }
 
 dependencyResolutionManagement {
     repositories {
+        mavenLocal()
         mavenCentral()
     }
 }
 
-include 'runtime', 'deployment'
+rootProject.name = 'quarkus-extensions'
+
+include ':quarkus-core-extension:deployment',
+        ':quarkus-core-extension:runtime',
+        ':quarkus-example-extension:deployment',
+        ':quarkus-example-extension:runtime'
+
+
+// renaming all extension projects to avoid naming conflict on mutual import (see https://github.com/gradle/gradle/issues/17784)
+rootProject.children.each {
+    extension ->
+        extension.children.forEach {
+            it.name = "${extension.name}-${it.name}"
+        }
+}
+

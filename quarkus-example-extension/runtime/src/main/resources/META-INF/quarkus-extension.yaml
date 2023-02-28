@@ -1,0 +1,4 @@
+name: Example Quarkus Extension
+artifact: ${project.groupId}:${project.artifactId}:${project.version}
+metadata:
+  short-name: "example-quarkus-extension"

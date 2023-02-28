@@ -1,0 +1,26 @@
+plugins {
+    id 'java-library'
+    id 'io.quarkus.extension'
+}
+
+dependencies {
+    implementation 'io.quarkus:quarkus-core'
+    implementation 'io.quarkus:quarkus-arc'
+
+    compileOnly project(':quarkus-core-extension:quarkus-core-extension-runtime')
+    //compileOnly 'com.example:quarkus-core-extension:local-SNAPSHOT'
+}
+
+quarkusExtension {
+    deploymentModule = project.parent.name + '-deployment'
+    deploymentArtifact= "com.example:${project.parent.name}-deployment:${version}"
+}
+
+publishing {
+    publications {
+        maven(MavenPublication) {
+            from(components.java)
+            artifactId = this.project.parent.name
+        }
+    }
+}

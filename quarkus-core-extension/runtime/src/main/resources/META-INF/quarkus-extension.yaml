@@ -1,0 +1,4 @@
+name: Core Quarkus Extension
+artifact: ${project.groupId}:${project.artifactId}:${project.version}
+metadata:
+  short-name: "core-quarkus-extension"

@@ -1,21 +1,20 @@
-allprojects {
-    apply plugin: 'maven-publish'
+plugins {
+}
+
+
+subprojects {
     group = 'com.example'
     version = "$version"
 
-
     pluginManager.withPlugin("java-library") {
         apply plugin: 'jacoco'
+        apply plugin: 'maven-publish'
+
         dependencies {
-            implementation platform('io.quarkus.platform:quarkus-bom:2.15.3.Final')
+            api platform("io.quarkus.platform:quarkus-bom:3.6.0")
+            testImplementation platform("io.quarkus.platform:quarkus-bom:3.6.0")
 
-            compileOnly "org.projectlombok:lombok:1.18.24"
-            annotationProcessor "org.projectlombok:lombok:1.18.22"
-            testCompileOnly "org.projectlombok:lombok:1.18.22"
-            testAnnotationProcessor "org.projectlombok:lombok:1.18.22"
-
-            testImplementation 'org.mockito:mockito-core:5.0.0'
-            testImplementation 'org.assertj:assertj-core:3.24.2'
+            testImplementation 'org.mockito:mockito-core'
             testImplementation 'org.junit.jupiter:junit-jupiter-api'
             testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine'
         }
@@ -27,13 +26,30 @@ allprojects {
 
         jacocoTestReport {
             reports {
-                html.required = true
+                xml.required = true
+                csv.required = false
+                html.required = false
             }
         }
 
         java {
-               withSourcesJar()
+            withSourcesJar()
+            sourceCompatibility = JavaVersion.VERSION_21
+            targetCompatibility = JavaVersion.VERSION_21
         }
 
+        test.finalizedBy jacocoTestReport
+
+
+        tasks.withType(JavaCompile).tap {
+            configureEach {
+                options.encoding = 'UTF-8'
+                options.compilerArgs << '-Xlint:all'
+                options.compilerArgs << '-Xlint:-exports'
+                options.compilerArgs << '-Xlint:-requires-automatic'
+                options.compilerArgs << '-Xlint:-processing'
+                options.deprecation = true
+            }
+        }
     }
 }
