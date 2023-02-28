@@ -8,3 +8,11 @@ dependencies {
     implementation 'io.quarkus:quarkus-arc'
 }
 
+publishing {
+    publications {
+        maven(MavenPublication) {
+            from(components.java)
+            artifactId = "example-extension-config"
+        }
+    }
+}

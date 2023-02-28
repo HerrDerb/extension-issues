@@ -1,0 +1,10 @@
+plugins {
+    id 'java'
+    id 'io.quarkus'
+}
+
+dependencies {
+    implementation 'com.example:example-extension-config:local-SNAPSHOT'
+ 
+    implementation 'io.quarkus:quarkus-arc'
+}

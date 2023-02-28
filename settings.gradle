@@ -1,17 +1,20 @@
 pluginManagement {
     repositories {
+        mavenLocal()
         mavenCentral()
         gradlePluginPortal()
     }
     plugins {
         id 'io.quarkus.extension' version '2.15.3.Final'
+        id 'io.quarkus' version '2.15.3.Final'
     }
 }
 
 dependencyResolutionManagement {
     repositories {
+        mavenLocal()
         mavenCentral()
     }
 }
 
-include 'runtime', 'deployment'
+include 'runtime', 'deployment' , 'application'
