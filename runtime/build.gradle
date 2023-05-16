@@ -4,8 +4,8 @@ plugins {
 }
 
 dependencies {
-    implementation 'io.quarkus:quarkus-core'
-    implementation 'io.quarkus:quarkus-arc'
+    compileOnly 'io.quarkus:quarkus-core'
+    compileOnly 'io.quarkus:quarkus-arc'
 }
 
 publishing {
