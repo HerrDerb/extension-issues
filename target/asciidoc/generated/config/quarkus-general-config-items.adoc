@@ -1,16 +1,16 @@
 
-:summaryTableId: quarkus
+:summaryTableId: quarkus-general-config-items
 [.configuration-legend]
 icon:lock[title=Fixed at build time] Configuration property fixed at build time - All other configuration properties are overridable at runtime
-[.configuration-reference.searchable, cols="80,.^10,.^10"]
+[.configuration-reference, cols="80,.^10,.^10"]
 |===
 
-h|[[quarkus_configuration]]link:#quarkus_configuration[Configuration property]
+h|[[quarkus-general-config-items_configuration]]link:#quarkus-general-config-items_configuration[Configuration property]
 
 h|Type
 h|Default
 
-a|icon:lock[title=Fixed at build time] [[quarkus_quarkus.-nested-.sub.id]]`link:#quarkus_quarkus.-nested-.sub.id[quarkus."nested".sub.id]`
+a|icon:lock[title=Fixed at build time] [[quarkus-general-config-items_quarkus.-nested-.sub.id]]`link:#quarkus-general-config-items_quarkus.-nested-.sub.id[quarkus."nested".sub.id]`
 
 [.description]
 --
@@ -24,7 +24,7 @@ endif::add-copy-button-to-env-var[]
 |`0`
 
 
-a|icon:lock[title=Fixed at build time] [[quarkus_quarkus.-nested-.id]]`link:#quarkus_quarkus.-nested-.id[quarkus."nested".id]`
+a|icon:lock[title=Fixed at build time] [[quarkus-general-config-items_quarkus.-nested-.id]]`link:#quarkus-general-config-items_quarkus.-nested-.id[quarkus."nested".id]`
 
 [.description]
 --

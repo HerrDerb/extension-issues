@@ -8,7 +8,7 @@ allprojects {
     pluginManager.withPlugin("java-library") {
         apply plugin: 'jacoco'
         dependencies {
-            implementation platform('io.quarkus.platform:quarkus-bom:2.16.3.Final')
+            implementation platform('io.quarkus.platform:quarkus-bom:3.0.3.Final')
 
             compileOnly "org.projectlombok:lombok:1.18.24"
             annotationProcessor "org.projectlombok:lombok:1.18.22"

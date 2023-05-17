@@ -1,16 +1,16 @@
 
-:summaryTableId: quarkus-com-example-good-config
+:summaryTableId: config-group-com-example-good-config-nested-properties
 [.configuration-legend]
 icon:lock[title=Fixed at build time] Configuration property fixed at build time - All other configuration properties are overridable at runtime
 [.configuration-reference, cols="80,.^10,.^10"]
 |===
 
-h|[[quarkus-com-example-good-config_configuration]]link:#quarkus-com-example-good-config_configuration[Configuration property]
+h|[[config-group-com-example-good-config-nested-properties_configuration]]link:#config-group-com-example-good-config-nested-properties_configuration[Configuration property]
 
 h|Type
 h|Default
 
-a|icon:lock[title=Fixed at build time] [[quarkus-com-example-good-config_quarkus.-nested-.id]]`link:#quarkus-com-example-good-config_quarkus.-nested-.id[quarkus."nested".id]`
+a|icon:lock[title=Fixed at build time] [[config-group-com-example-good-config-nested-properties_quarkus.-nested-.id]]`link:#config-group-com-example-good-config-nested-properties_quarkus.-nested-.id[quarkus."nested".id]`
 
 [.description]
 --
